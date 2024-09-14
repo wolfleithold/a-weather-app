@@ -10,3 +10,13 @@ const searchBtn = document.getElementById("search-btn");
 const currentWeatherDiv = document.getElementById("weather-details");
 const forecastDiv = document.getElementById("forecast-details");
 const searchHistoryDiv = document.getElementById("search-history");
+
+// search button
+searchBtn.addEventListener("click", () => {
+  const city = cityInput.value.trim();
+  if (city) {
+    getWeatherData(city);
+    addToSearchHistory(city);
+    cityInput.value = ""; // Clear the input field
+  }
+});
