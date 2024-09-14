@@ -1,0 +1,65 @@
+* {
+    margin: 5px;
+  }
+  
+  header {
+    background-color: #8b1abe; /* Change this to the desired background color */
+    padding: 20px; /* Optional: Add some padding */
+  }
+  
+  .topper {
+    font-size: x-large; /* Adjust the size as needed */
+    font-weight: bold;
+  }
+  
+  .card {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px 0;
+  }
+  
+  .search-history-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .search-history-list li {
+    cursor: pointer;
+    background-color: #e6e6e6;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 3px;
+    text-align: center;
+  }
+  
+  #forecast-details {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  #forecast-details .forecast-card {
+    width: 18%;
+    background-color: #e6e6e6;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .columns {
+  margin-top: 20px;
+}
+
+.search-history-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.search-history-list li {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.forecast-card {
+  margin: 10px;
+}
