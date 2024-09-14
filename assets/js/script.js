@@ -20,3 +20,21 @@ searchBtn.addEventListener("click", () => {
     cityInput.value = ""; // Clear the input field
   }
 });
+
+// weather data
+function getWeatherData(city) {
+  const currentWeatherUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
+  const forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=imperial&appid=${apiKey}`;
+
+  // current weather
+  fetch(currentWeatherUrl)
+    .then((response) => response.json())
+    .then((data) => displayCurrentWeather(data))
+    .catch((err) => console.error("Error fetching current weather:", err));
+
+  // 5-day forecast
+  fetch(forecastUrl)
+    .then((response) => response.json())
+    .then((data) => displayForecast(data))
+    .catch((err) => console.error("Error fetching forecast:", err));
+}
