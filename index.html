@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Weather Dashboard</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="columns is-vcentered">
+        <div class="column is-8"></div>
+        <div class="column">
+          <h1 class="is-size-2 has-text-white has-text-weight-bold">
+            Weather Dashboard
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="card">
+      <h1 class="topper">Search for a City:</h1>
+      <div class="search">
+        <input
+          id="city-input"
+          type="text"
+          placeholder="enter city name"
+          spellcheck="false"
+        />
+        <button id="search-btn" class="button is-size-7">Search</button>
+      </div>
+    </div>
+
+    <div class="columns">
+      <div class="column is-3">
+        <div class="card">
+          <h2 class="topper">Search History:</h2>
+          <ul id="search-history" class="search-history-list"></ul>
+        </div>
+      </div>
+
+      <div class="column is-9">
+        <div id="current-weather" class="card">
+          <h2 class="topper">Current Weather:</h2>
+          <div id="weather-details"></div>
+        </div>
+
+        <div id="forecast" class="card">
+          <h2 class="topper">5-Day Forecast:</h2>
+          <div id="forecast-details" class="columns"></div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.3/jquery-ui.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
