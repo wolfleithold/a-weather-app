@@ -11,6 +11,10 @@ const currentWeatherDiv = document.getElementById("weather-details");
 const forecastDiv = document.getElementById("forecast-details");
 const searchHistoryDiv = document.getElementById("search-history");
 
+window.onload = function () {
+  loadSearchHistory();
+};
+
 // search button
 searchBtn.addEventListener("click", () => {
   const city = cityInput.value.trim();
@@ -87,10 +91,32 @@ function displayForecast(data) {
 
 // add city to search history
 function addToSearchHistory(city) {
-  const historyItem = document.createElement("li");
-  historyItem.textContent = city;
-  historyItem.addEventListener("click", () => {
-    getWeatherData(city);
+  let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+
+  // Check if the city is already in the search history
+  if (!searchHistory.includes(city)) {
+    searchHistory.push(city);
+    localStorage.setItem("searchHistory", JSON.stringify(searchHistory));
+    displaySearchHistory();
+  }
+}
+
+// Display search history from localStorage
+function displaySearchHistory() {
+  searchHistoryDiv.innerHTML = "";
+  let searchHistory = JSON.parse(localStorage.getItem("searchHistory")) || [];
+
+  searchHistory.forEach((city) => {
+    const historyItem = document.createElement("li");
+    historyItem.textContent = city;
+    historyItem.addEventListener("click", () => {
+      getWeatherData(city);
+    });
+    searchHistoryDiv.appendChild(historyItem);
   });
-  searchHistoryDiv.appendChild(historyItem);
+}
+
+// Load search history on page load
+function loadSearchHistory() {
+  displaySearchHistory();
 }
